@@ -156,7 +156,7 @@ public class CP_Claro {
         Thread.sleep(3000);
 
         // hago busqueda por id email y contraseña
-        driver.findElement(By.id("email")).sendKeys("mailprueba44@saleono");
+        driver.findElement(By.id("email")).sendKeys("mailprueb@saleono");
 
         driver.findElement(By.id("password")).sendKeys("121212Ab");
 
