@@ -6,7 +6,10 @@ import org.openqa.selenium.WebElement;
 import utils.SeleniumBase;
 
 public class ShopPage extends SeleniumBase {
-    By locatorBtnComoComprar = By.xpath("//*[@id=\"content\"]/div[3]/div/div/button[4]/div/p[1]");
+    public ShopPage(WebDriver driver) {
+        super(driver);
+    }
+   /* By locatorBtnComoComprar = By.xpath("//p[@class='AccesosRapidos_titulo__19QGm' and text()='¿Cómo comprar?']");
 
     public void irComoComprar(){
         click(esperarPorElementoLocalizado(locatorBtnComoComprar));
@@ -14,5 +17,5 @@ public class ShopPage extends SeleniumBase {
     //crear elemento web
     public ShopPage(WebDriver driver) {
         super(driver);
-    }
+    }*/
 }

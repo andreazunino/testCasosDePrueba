@@ -7,7 +7,7 @@ import utils.SeleniumBase;
 public class HomePage extends SeleniumBase {
     //Definir los localizadores
     By locatorBtnMiClaro = By.xpath("//*[@id=\"content\"]/div[2]/li[1]/a");
-    By locatorBtnTienda = By.xpath("///*[@id=\"__next\"]/div/header/div[1]/div/div/nav/div/div[1]/div/a[3]/div/img");
+    By locatorBtnTienda = (By.xpath("//*[@id=\"content\"]/div[2]/li[3]/a/h2"));
 
     //Centralizar las acciones
     /*public MiClaro irMiClaro(){

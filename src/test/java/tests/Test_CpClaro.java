@@ -8,12 +8,14 @@ import org.openqa.selenium.WebDriver;
 import pages.HomePage;
 import pages.MiClaro;
 import pages.RegisterPage;
+import pages.ShopPage;
 
 public class Test_CpClaro {
     WebDriver driver;
     HomePage home;
     RegisterPage register;
     MiClaro claropage;
+    ShopPage tienda;
     String rutaDriver = "C:\\Users\\andrea.zunino\\Desktop\\Ejercicio\\src\\test\\resources\\Drivers\\chromedriver.exe";
     String browser = "Chrome";
     String property = "webdriver.chrome.driver";
@@ -24,6 +26,7 @@ public class Test_CpClaro {
         home.conexionDriver(browser,rutaDriver,property);
         claropage = new MiClaro(home.getDriver());
         register = new RegisterPage(claropage.getDriver());
+        tienda= new ShopPage(home.getDriver());
         home.cargarPagina("https://www.claro.com.ar/");
     }
 
@@ -37,7 +40,7 @@ public class Test_CpClaro {
     }
 
     @Test
-    public void CP_03_ErrorContrasenia(){
+    public void CP_02_ErrorContrasenia(){
         //este error es que faltan mayusculas y cantidad de caracteres
         home.irMiClaro();
         claropage.irARegistrar();
@@ -46,7 +49,12 @@ public class Test_CpClaro {
 
     }
 
+    @Test
+    public void CP_03_IngresaTienda(){
+        home.irATienda();
 
+
+    }
    // @AfterEach
     //public void afterTests(){
        // home.cerrarBrowser();
