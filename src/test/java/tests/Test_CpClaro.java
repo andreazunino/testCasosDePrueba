@@ -36,6 +36,16 @@ public class Test_CpClaro {
 
     }
 
+    @Test
+    public void CP_03_ErrorContrasenia(){
+        //este error es que faltan mayusculas y cantidad de caracteres
+        home.irMiClaro();
+        claropage.irARegistrar();
+        register.completarFormularioRegistro("domnasdas@gmail.com","saf4534");
+        Assertions.assertTrue(true);
+
+    }
+
 
    // @AfterEach
     //public void afterTests(){
