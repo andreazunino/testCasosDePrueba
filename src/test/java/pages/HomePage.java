@@ -8,20 +8,22 @@ public class HomePage extends SeleniumBase {
     //Definir los localizadores
     By locatorBtnMiClaro = By.xpath("//*[@id=\"content\"]/div[2]/li[1]/a");
     By locatorBtnTienda = By.xpath("///*[@id=\"__next\"]/div/header/div[1]/div/div/nav/div/div[1]/div/a[3]/div/img");
-    By locatorBtnRegistrar = By.xpath("//*[@id=\"kc-info-wrapper\"]/div/a");
+
     //Centralizar las acciones
-    public void irMiClaro(){
+    /*public MiClaro irMiClaro(){
         //click(locatorBtnRegistrarte);
         click(esperarPorElementoLocalizado(locatorBtnMiClaro));
-        esperarXSegundos(10);
-        click(esperarPorElementoLocalizado(locatorBtnRegistrar));
 
+        return null
+    }*/
+    public MiClaro irMiClaro(){
+        click(esperarPorElementoLocalizado(locatorBtnMiClaro));
+        return null;
     }
 
-
-
-    public void irATienda(){
+    public ShopPage irATienda(){
         click(esperarPorElementoLocalizado(locatorBtnTienda));
+        return null;
     }
     public HomePage(WebDriver driver) {
         super(driver);

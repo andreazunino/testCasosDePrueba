@@ -5,12 +5,6 @@ import org.openqa.selenium.WebDriver;
 import utils.SeleniumBase;
 
 public class RegisterPage extends SeleniumBase {
-    By locatorBtnRegistrar = By.xpath("//a[contains(@tabindex,6)]");
-
-    public void irARegistrar() {
-        //click(locatorBtnRegistrarte);
-        click(esperarPorElementoLocalizado(locatorBtnRegistrar));
-    }
 
     public RegisterPage(WebDriver driver) {
         super(driver);
@@ -20,7 +14,7 @@ public class RegisterPage extends SeleniumBase {
     By locatorEmail = By.id("email");
     By locatorPassword = By.name("password");
     By locatorRepeatPassword = By.name("password-confirm");
-    By locatorIngresar = By.xpath("//button[@type='submit']");
+    By locatorIngresar = By.xpath("//a[@class='btn-secondary']");
 
     //Centralizar Acciones
 
