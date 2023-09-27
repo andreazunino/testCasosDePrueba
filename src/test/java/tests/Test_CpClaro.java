@@ -5,10 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import pages.HomePage;
-import pages.MiClaro;
-import pages.RegisterPage;
-import pages.ShopPage;
+import pages.*;
 
 public class Test_CpClaro {
     WebDriver driver;
@@ -16,6 +13,7 @@ public class Test_CpClaro {
     RegisterPage register;
     MiClaro claropage;
     ShopPage tienda;
+    CatalogoTienda catalogo;
     String rutaDriver = "C:\\Users\\andrea.zunino\\Desktop\\Ejercicio\\src\\test\\resources\\Drivers\\chromedriver.exe";
     String browser = "Chrome";
     String property = "webdriver.chrome.driver";
@@ -27,6 +25,7 @@ public class Test_CpClaro {
         claropage = new MiClaro(home.getDriver());
         register = new RegisterPage(claropage.getDriver());
         tienda= new ShopPage(home.getDriver());
+        catalogo = new CatalogoTienda(tienda.getDriver());
         home.cargarPagina("https://www.claro.com.ar/");
     }
 
@@ -34,7 +33,7 @@ public class Test_CpClaro {
     public void CP_01_CrearUsuarioConExito(){
         home.irMiClaro();
         claropage.irARegistrar();
-        register.completarFormularioRegistro("domnasdas@gmail.com","safJ34534");
+        register.completarFormularioRegistro("gfrfrfrs@gmail.com","safJ34534");
         Assertions.assertTrue(true);
 
     }
@@ -53,7 +52,12 @@ public class Test_CpClaro {
     public void CP_03_IngresaTienda(){
         home.irATienda();
 
+    }
 
+    @Test
+    public void CP_04_VerCatalogoCompleto(){
+        home.irATienda();
+        tienda.irACatalogo();
     }
    // @AfterEach
     //public void afterTests(){

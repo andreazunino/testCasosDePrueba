@@ -6,6 +6,13 @@ import org.openqa.selenium.WebElement;
 import utils.SeleniumBase;
 
 public class ShopPage extends SeleniumBase {
+
+    By locatorBtnCatalogo = By.xpath("//*[@id=\"content\"]/section/div/div[1]/div[2]/span/a/div/div/div");
+    public ShopPage irACatalogo() {
+        click(esperarPorElementoLocalizado(locatorBtnCatalogo));
+        return null;
+    }
+
     public ShopPage(WebDriver driver) {
         super(driver);
     }
@@ -16,6 +23,7 @@ public class ShopPage extends SeleniumBase {
     }
     //crear elemento web
     public ShopPage(WebDriver driver) {
+
         super(driver);
     }*/
 }
