@@ -14,6 +14,7 @@ public class Test_CpClaro {
     MiClaro claropage;
     ShopPage tienda;
     CatalogoTienda catalogo;
+    CancelRegisterPage cancelarRegistro;
     String rutaDriver = "C:\\Users\\andrea.zunino\\Desktop\\Ejercicio\\src\\test\\resources\\Drivers\\chromedriver.exe";
     String browser = "Chrome";
     String property = "webdriver.chrome.driver";
@@ -26,6 +27,7 @@ public class Test_CpClaro {
         register = new RegisterPage(claropage.getDriver());
         tienda= new ShopPage(home.getDriver());
         catalogo = new CatalogoTienda(tienda.getDriver());
+        cancelarRegistro = new CancelRegisterPage(register.getDriver());
         home.cargarPagina("https://www.claro.com.ar/");
     }
 
@@ -34,6 +36,7 @@ public class Test_CpClaro {
         home.irMiClaro();
         claropage.irARegistrar();
         register.completarFormularioRegistro("gfrfrfrs@gmail.com","safJ34534");
+        register.Registrar();
         Assertions.assertTrue(true);
 
     }
@@ -44,6 +47,7 @@ public class Test_CpClaro {
         home.irMiClaro();
         claropage.irARegistrar();
         register.completarFormularioRegistro("domnasdas@gmail.com","saf4534");
+        register.errorContrasenia();
         Assertions.assertTrue(true);
 
     }
@@ -58,6 +62,26 @@ public class Test_CpClaro {
     public void CP_04_VerCatalogoCompleto(){
         home.irATienda();
         tienda.irACatalogo();
+    }
+
+    @Test
+    public void CP_05_aplicarFiltrocatalogo(){
+        home.irATienda();
+        tienda.irACatalogo();
+        catalogo.filtrosCatalogo("30000","100000");
+        Assertions.assertTrue(true);
+
+    }
+
+    @Test
+    public void CP_06_cancelacionRegistro(){
+        home.irMiClaro();
+        claropage.irARegistrar();
+        register.completarFormularioRegistro("pepa@gmail.com","Probando21");
+        register.Registrar();
+        register.cancelarRegistracion();
+        Assertions.assertTrue(true);
+
     }
    // @AfterEach
     //public void afterTests(){
